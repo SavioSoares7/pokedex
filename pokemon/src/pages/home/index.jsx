@@ -1,5 +1,13 @@
 import { Container } from "./style";
 
+import { Header } from "../../components/header";
 export function Home() {
-  return <Container>Hello world</Container>;
+  return (
+    <>
+      <Header />
+      <Container>
+        <p>teste</p>
+      </Container>
+    </>
+  );
 }

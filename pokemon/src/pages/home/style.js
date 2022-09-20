@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  min-height: 200px;
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  width: 100%;
 `;
