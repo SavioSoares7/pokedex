@@ -1,13 +1,33 @@
-import { Container } from "./style";
+import { Container, Menu } from "./style";
 
 import { FiFilter, FiMenu } from "react-icons/fi";
+import { CgPokemon } from "react-icons/cg";
 
 export function Header() {
   return (
     <Container>
       <FiFilter />
-      <h1>Pokemon</h1>
+      <a href="#">
+        Pokemon <CgPokemon />
+      </a>
+
       <FiMenu />
+      <Menu>
+        <ul>
+          <li>
+            <a href="#">Pokemons</a>
+          </li>
+          <li>
+            <a href="#">Pokemons</a>
+          </li>
+          <li>
+            <a href="#">Pokemons</a>
+          </li>
+          <li>
+            <a href="#">Pokemons</a>
+          </li>
+        </ul>
+      </Menu>
     </Container>
   );
 }

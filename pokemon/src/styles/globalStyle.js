@@ -5,7 +5,7 @@ export default createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Lato', sans-serif;
   }
   body{
     background-color: ${({ theme }) => theme.COLORS.BG_WHITE};
@@ -22,7 +22,7 @@ export default createGlobalStyle`
     cursor: pointer;
     transition: filter 0.2s;
   }
-  button:hover, a:hover {
+  button:hover {
     filter: brightness(0.9);
   }
 `;
