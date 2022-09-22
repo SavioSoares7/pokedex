@@ -27,11 +27,26 @@ export const Menu = styled.nav`
   margin-top: 66px;
 
   ul {
-    background-color: #027554;
+    display: block;
+    background-color: #202020;
     border-radius: 20px 0 0 20px;
+
+    height: 100%;
+    transition: 0.3ms all;
+
+    height: calc(100vh - 66px);
+
+    &.active {
+      height: 0%;
+      visibility: hidden;
+    }
   }
 
   li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25%;
     padding: 30px 130px;
     border-bottom: 1px solid #fff;
 
