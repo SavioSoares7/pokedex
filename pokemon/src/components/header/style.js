@@ -38,7 +38,7 @@ export const Menu = styled.nav`
 
     &.active {
       height: 0%;
-      visibility: hidden;
+      display: none;
     }
   }
 

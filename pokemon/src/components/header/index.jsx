@@ -1,6 +1,7 @@
 import { Container, Menu } from "./style";
 
-import { FiFilter, FiMenu } from "react-icons/fi";
+import { FiMenu } from "react-icons/fi";
+import { AiOutlineSearch } from "react-icons/ai";
 import { CgPokemon } from "react-icons/cg";
 
 const toggleMenu = function () {
@@ -11,7 +12,9 @@ const toggleMenu = function () {
 export function Header() {
   return (
     <Container>
-      <FiFilter />
+      <a href="#">
+        <AiOutlineSearch />
+      </a>
       <a href="#">
         Pokemon <CgPokemon />
       </a>

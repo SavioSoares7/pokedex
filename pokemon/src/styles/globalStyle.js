@@ -20,6 +20,9 @@ export default createGlobalStyle`
   }
   button{
     cursor: pointer;
+    outline: none;
+    border: none;
+    cursor: pointer;
     transition: filter 0.2s;
   }
   button:hover {
