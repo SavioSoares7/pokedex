@@ -7,4 +7,16 @@ export const Container = styled.div`
 
   width: 400px;
   height: 400px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 50px;
+
+  > img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
 `;
