@@ -1,30 +1,51 @@
 import { Container } from "./style";
 
 import { Header } from "../../components/header";
-import { Button } from "../../components/button";
-import { BoxPokemon } from "../../components/boxPokemon";
 
 export function Search() {
-  let URL = `https://pokeapi.co/api/v2/pokemon/ditto`;
+  function createBox(pokemon) {
+    let containerBox = document.querySelector("div#container-box");
 
-  fetch(URL)
-    .then((date) => {
-      return date.json();
-    })
-    .then((pokemon) => {
-      console.log(pokemon);
-    });
+    containerBox.classList.add("box-pokemon");
+
+    let img = document.createElement("img");
+    img.src = `${pokemon.sprites.front_default}`;
+
+    containerBox.appendChild(img);
+    return containerBox;
+  }
+
+  function searchPokemon() {
+    let search = document.querySelector("input#pokemon").value;
+    let URL = `https://pokeapi.co/api/v2/pokemon/${search}`;
+
+    if (!search) {
+      alert("Por favor preencha o campos");
+      return;
+    }
+
+    fetch(URL)
+      .then((date) => {
+        return date.json();
+      })
+      .then((date) => {
+        createBox(date);
+      })
+      .catch((e) => {
+        console.log("Pokemon não encontrado");
+      });
+  }
 
   return (
     <>
       <Header />
       <Container>
         <div>
-          <input type="text" />
-          <Button />
+          <input type="text" id="pokemon" />
+          <button onClick={searchPokemon}>Pesquisar</button>
         </div>
 
-        <BoxPokemon></BoxPokemon>
+        <div id="container-box"></div>
       </Container>
     </>
   );
