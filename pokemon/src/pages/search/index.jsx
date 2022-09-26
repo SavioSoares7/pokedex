@@ -2,19 +2,10 @@ import { Container } from "./style";
 
 import { Header } from "../../components/header";
 
+import { Pokemon } from "../../controllers/SearchPokemon";
+const pokemon = new Pokemon();
+
 export function Search() {
-  function createBox(pokemon) {
-    let containerBox = document.querySelector("div#container-box");
-
-    containerBox.classList.add("box-pokemon");
-
-    let img = document.createElement("img");
-    img.src = `${pokemon.sprites.front_default}`;
-
-    containerBox.appendChild(img);
-    return containerBox;
-  }
-
   function searchPokemon() {
     let search = document.querySelector("input#pokemon").value;
     let URL = `https://pokeapi.co/api/v2/pokemon/${search}`;
@@ -29,7 +20,7 @@ export function Search() {
         return date.json();
       })
       .then((date) => {
-        createBox(date);
+        pokemon.CreateBox(date);
       })
       .catch((e) => {
         console.log("Pokemon não encontrado");
@@ -45,7 +36,14 @@ export function Search() {
           <button onClick={searchPokemon}>Pesquisar</button>
         </div>
 
-        <div id="container-box"></div>
+        <div id="container-box">
+          <div id="container-info">
+            <div id="pokemon-info"></div>
+          </div>
+          <div id="container-moves">
+            <div id="container-move"></div>
+          </div>
+        </div>
       </Container>
     </>
   );
