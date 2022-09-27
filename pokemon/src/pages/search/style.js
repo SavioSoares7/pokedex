@@ -48,6 +48,8 @@ export const Container = styled.div`
       align-items: center;
       flex-direction: column;
 
+      position: relative;
+
       width: 100%;
       border-bottom: 1px solid #ccc;
       padding-bottom: 5px;
@@ -65,6 +67,28 @@ export const Container = styled.div`
         width: 50px;
         height: 50px;
         background-color: red;
+      }
+      > div#pokemon-info {
+        > #pokemon-id,
+        #pokemon-gender {
+          border: 1px solid #ccc;
+          box-shadow: 0px 0px 5px #ccc;
+          border-radius: 50%;
+          padding: 15px;
+
+          position: absolute;
+        }
+        > #pokemon-id {
+          right: 0;
+        }
+        > #pokemon-gender {
+          text-align: center;
+          left: 0;
+          cursor: pointer;
+          background-color: #184c78;
+
+          color: #fff;
+        }
       }
     }
     > div#container-moves {

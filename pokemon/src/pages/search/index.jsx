@@ -21,6 +21,7 @@ export function Search() {
       })
       .then((date) => {
         pokemon.CreateBox(date);
+        console.log(date);
       })
       .catch((e) => {
         console.log("Pokemon não encontrado");
@@ -38,7 +39,10 @@ export function Search() {
 
         <div id="container-box">
           <div id="container-info">
-            <div id="pokemon-info"></div>
+            <div id="pokemon-info">
+              <p id="pokemon-id"></p>
+              <div id="pokemon-gender"></div>
+            </div>
           </div>
           <div id="container-moves">
             <div id="container-move"></div>

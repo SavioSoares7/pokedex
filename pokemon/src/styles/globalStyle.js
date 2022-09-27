@@ -5,7 +5,7 @@ export default createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
   }
   body{
     background-color: ${({ theme }) => theme.COLORS.BG_WHITE};
