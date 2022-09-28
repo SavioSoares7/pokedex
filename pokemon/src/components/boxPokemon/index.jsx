@@ -1,11 +1,12 @@
 import { Container } from "./style";
 
-export function BoxPokemon() {
+import { useState, useEffect } from "react";
+
+export function BoxPokemon({ pokemonJson }) {
+  console.log(pokemonJson);
   return (
     <Container>
-      <img src="https://github.com/saviosoares7.png" alt="" />
-      <h1>Name</h1>
-      <span>Type</span>
+      <h1>teste</h1>
     </Container>
   );
 }

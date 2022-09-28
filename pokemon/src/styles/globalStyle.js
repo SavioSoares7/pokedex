@@ -18,6 +18,10 @@ export default createGlobalStyle`
     cursor: pointer;
     font-size: 20px;
   }
+  input{
+    outline: none;
+    border: none;
+  }
   button{
     cursor: pointer;
     outline: none;

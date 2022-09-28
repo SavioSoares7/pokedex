@@ -1,54 +1,34 @@
 import { Container } from "./style";
 
 import { Header } from "../../components/header";
-
-import { Pokemon } from "../../controllers/SearchPokemon";
-const pokemon = new Pokemon();
+import { BoxPokemon } from "../../components/boxPokemon";
 
 export function Search() {
-  function searchPokemon() {
-    let search = document.querySelector("input#pokemon").value;
-    let URL = `https://pokeapi.co/api/v2/pokemon/${search}`;
+  function pokeApi() {
+    let input = document.querySelector("input#searchPokemon").value;
 
-    if (!search) {
-      alert("Por favor preencha o campos");
-      return;
-    }
+    let API = `https://pokeapi.co/api/v2/pokemon/${input}`;
 
-    fetch(URL)
+    fetch(API)
       .then((date) => {
         return date.json();
       })
       .then((date) => {
-        pokemon.CreateBox(date);
-        console.log(date);
+        createPokemon(date);
       })
-      .catch((e) => {
+      .catch(() => {
         console.log("Pokemon não encontrado");
       });
   }
-
+  function createPokemon(date) {}
   return (
     <>
       <Header />
       <Container>
-        <div>
-          <input type="text" id="pokemon" />
-          <button onClick={searchPokemon}>Pesquisar</button>
-        </div>
-
-        <div id="container-box">
-          <div id="container-info">
-            <div id="pokemon-info">
-              <p id="pokemon-id"></p>
-              <div id="pokemon-gender"></div>
-            </div>
-          </div>
-          <div id="container-moves">
-            <div id="container-move"></div>
-          </div>
-        </div>
+        <input type="text" id="searchPokemon" />
+        <button onClick={pokeApi}>Pesquisar</button>
       </Container>
+      <div id="container-Pokemon"></div>
     </>
   );
 }

@@ -1,17 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: #fff;
-  box-shadow: 0px 0px 10px #bbb;
-  width: 400px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 50px;
-  > img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-  }
+  width: 80%;
+
+  background-color: ${({ theme }) => theme.COLORS.BG_WHITE};
+  box-shadow: 0px 0px 10px 5px #ccc;
+  border-radius: 10px;
+  min-height: 500px;
+  margin: 0 auto;
 `;
